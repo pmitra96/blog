@@ -1,0 +1,141 @@
+Script started on Mon 06 Jul 2015 03:38:04 PM IST
+]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [K]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ script/plugin install git://github.com/thoughtbot /paperclip.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ rails s[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript/plugin install git://github.com/thoughtbot//paperclip.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C install git://github.com/thoughtbot/p[1Paperclip.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C[C[C[C[C[C[C[C[C install git://github.com/thoughtbot/pa[1Pperclip.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C[C[C[C[C[C[C[C install git://github.com/thoughtbot/pap[1Perclip.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C[C[C[C[C[C[C install git://github.com/thoughtbot/pape[1Prclip.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C[C[C[C[C[C install git://github.com/thoughtbot/paper[1Pclip.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C[C[C[C[C install git://github.com/thoughtbot/paperc[1Plip.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C[C[C[C install git://github.com/thoughtbot/papercl[1Pip.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C[C[C install git://github.com/thoughtbot/papercli[1Pp.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C[C install git://github.com/thoughtbot/paperclip[1P.git[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C[C install git://github.com/thoughtbot/paperclip.[1Pgit[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C[C install git://github.com/thoughtbot/paperclip.g[1Pit[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[C install git://github.com/thoughtbot/paperclip.gi[1Pt[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C install git://github.com/thoughtbot/paperclip.git[K[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ 
+
+install: missing destination file operand after ‘git://github.com/thoughtbot/paperclip.git’
+Try 'install --help' for more information.
+]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ install [1Prails s[K[K[K[K[K[K[Krails plugin install[5Pke db:migrateils generate scaffold comment name:string body:ttext post:references[K[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[Cke db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cils plugin install[12Pinstall [K[K[K[K[K[K[K[Krails plugin install[5Pke db:migrateils generate scaffold comment name:string body:ttext post:reference[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [Cuby script/generate scaffold comment name:string body:text post:references[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [Cails generate scaffold comment name:string body:t[7Pext post:reference[A]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ [C[Cke db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cils plugin install[Krails plugin install git://github.com/thoughtbot/ paperclip.git
+Usage:
+  rails plugin new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /usr/local/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some plugin template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the plugin with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the plugin with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+      [--dummy-path=DUMMY_PATH]                          # Create dummy application at given path
+                                                         # Default: test/dummy
+      [--full], [--no-full]                              # Generate a rails engine with bundled Rails application for testing
+      [--mountable], [--no-mountable]                    # Generate mountable isolated application
+      [--skip-gemspec], [--no-skip-gemspec]              # Skip gemspec file
+      [--skip-gemfile-entry], [--no-skip-gemfile-entry]  # If creating plugin in application's directory skip adding entry to Gemfile
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]  # Show this help message and quit
+
+Description:
+    The 'rails plugin new' command creates a skeleton for developing any
+    kind of Rails extension with ability to run tests using dummy Rails
+    application.
+
+Example:
+    rails plugin new ~/Code/Ruby/blog
+
+    This generates a skeletal Rails plugin in ~/Code/Ruby/blog.
+    See the README in the newly created plugin to get going.
+]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ rails plugin install git://github.com/thoughtbot/ppaperclip.git -r
+Usage:
+  rails plugin new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /usr/local/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some plugin template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the plugin with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the plugin with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+      [--dummy-path=DUMMY_PATH]                          # Create dummy application at given path
+                                                         # Default: test/dummy
+      [--full], [--no-full]                              # Generate a rails engine with bundled Rails application for testing
+      [--mountable], [--no-mountable]                    # Generate mountable isolated application
+      [--skip-gemspec], [--no-skip-gemspec]              # Skip gemspec file
+      [--skip-gemfile-entry], [--no-skip-gemfile-entry]  # If creating plugin in application's directory skip adding entry to Gemfile
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]  # Show this help message and quit
+
+Description:
+    The 'rails plugin new' command creates a skeleton for developing any
+    kind of Rails extension with ability to run tests using dummy Rails
+    application.
+
+Example:
+    rails plugin new ~/Code/Ruby/blog
+
+    This generates a skeletal Rails plugin in ~/Code/Ruby/blog.
+    See the README in the newly created plugin to get going.
+]0;sai@ubuntu: ~/RORprojects/blogsai@ubuntu:~/RORprojects/blog$ bundle install
+Fetching gem metadata from https://rubygems.org/............
+Fetching version metadata from https://rubygems.org/...
+Fetching dependency metadata from https://rubygems.org/..
+Resolving dependencies...
+Using rake 10.4.2
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.7.0
+Using thread_safe 0.3.5
+Using tzinfo 1.2.2
+Using activesupport 4.2.1
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile 0.6.2
+Using nokogiri 1.6.6.2
+Using rails-deprecated_sanitizer 1.0.3
+Using rails-dom-testing 1.0.6
+Using loofah 2.0.2
+Using rails-html-sanitizer 1.0.2
+Using actionview 4.2.1
+Using rack 1.6.4
+Using rack-test 0.6.3
+Using actionpack 4.2.1
+Using globalid 0.3.5
+Using activejob 4.2.1
+Using mime-types 2.6.1
+Using mail 2.6.3
+Usi

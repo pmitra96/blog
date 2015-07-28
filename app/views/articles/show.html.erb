@@ -1,0 +1,141 @@
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                <%if user_signed_in?%>
+                      <li>
+                        <%= link_to'new article', new_article_path %>
+                    </li>
+                   
+                    <li>
+                       <%= link_to'my articles',  my_articles_articles_path %>
+                    </li>
+                    <li>
+                       <%= link_to'logout',  destroy_user_session_path, :method => :delete %>
+
+                    </li>
+                     <li>
+                       <%= link_to'home',  articles_path %>
+                    </li>
+                    <%else%>
+                     <li>
+                        <%= link_to'log in', user_session_path %>
+                    </li>
+                   
+                    <li>
+                       <%= link_to'sign up',  new_user_registration_path %>
+                    </li>
+                     <li>
+                       <%= link_to'home',  articles_path %>
+                    </li>
+                    <%end%>
+</ul>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 style="font-size:35px"><%= @article.user.email%> </h1>
+                        <hr class="small">
+                        <%if user_signed_in?%>
+                        
+                        <span class="subheading"> hello </span>
+                        <%else%>
+                        <span class="subheading">this page shows the full article with its image and video </span>
+                        <%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+
+
+        <div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-preview">
+<%= jwplayer_assets %>
+
+<p
+   style="text-decoration:none;
+           text-align:left;", class ="post-title">
+  <%= @article.post %>
+</p>
+
+
+
+
+<p class="post-subtitle">
+
+  <%= @article.description %>
+</p>
+
+<%if @article.photo.present? %>
+<div class="ig">
+<p><%= link_to 'image',(@article.photo.url) %></p>
+<%= image_tag @article.photo.url, width: "100%" %>
+</div>
+<%end%>
+<%if @article.video.present? %>
+
+<div class="vdo">
+<p>Video</p>
+	<div id="myElement">Loading the player...</div>
+    </div>
+<%end%>
+
+   
+<h2 style="text-align:left">Comments</h2>
+<%= render @article.comments %>
+ 
+ <p><%if !current_user.nil?%>
+
+<%= render 'comments/form' %>
+<%end%>
+</p>
+<%if user_signed_in? && current_user.id == @article.user_id%>
+<%= link_to 'Edit', edit_article_path(@article) %>
+<%else%>
+<%end%>
+<%= link_to 'Back', articles_path %>
+
+
+<script type="text/javascript">
+    jwplayer("myElement").setup({
+        file: "<%= @article.video.url %>"
+    });
+</script>
+<style>
+.ig{
+    width:60%;
+    margin-right:1px;
+
+}
+.vdo{
+    width: 50%;
+}
+</style>

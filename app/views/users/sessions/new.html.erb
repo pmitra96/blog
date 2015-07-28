@@ -1,0 +1,132 @@
+<html><head>
+  <!-- templatemo 418 form pack -->
+    <!-- 
+    Form Pack
+    http://www.templatemo.com/preview/templatemo_418_form_pack 
+    -->
+  <title>Login Two</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> 
+   <%= stylesheet_link_tag    'font-awesome.min.css', media: 'all', 'data-turbolinks-track' => true %> 
+   <%= stylesheet_link_tag    'bs.min.css', media: 'all', 'data-turbolinks-track' => true %> 
+   <%= stylesheet_link_tag    'bootstrap-theme.min.css', media: 'all', 'data-turbolinks-track' => true %>
+   <%= stylesheet_link_tag    'bootstrap-social.css', media: 'all', 'data-turbolinks-track' => true %> 
+   <%= stylesheet_link_tag    'templatemo_style.css', media: 'all', 'data-turbolinks-track' => true %> 
+ 
+
+
+
+</head>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                <%if user_signed_in?%>
+                      <li>
+                        <%= link_to'new article', new_article_path %>
+                    </li>
+                   
+                    <li>
+                       <%= link_to'my articles',  my_articles_articles_path %>
+                    </li>
+                    <li>
+                       <%= link_to'logout',  destroy_user_session_path, :method => :delete %>
+
+                    </li>
+                     <li>
+                       <%= link_to'home',  articles_path %>
+                    </li>
+                    <%else%>
+                     <li>
+                        <%= link_to'log in', user_session_path %>
+                    </li>
+                   
+                    <li>
+                       <%= link_to'sign up',  new_user_registration_path %>
+                    </li>
+                     <li>
+                       <%= link_to'home',  articles_path %>
+                    </li>
+                    <%end%>
+</ul>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<body class="templatemo-bg-image-1">
+  <div class="container">
+    <div class="col-md-12">     
+      <form class="form-horizontal templatemo-login-form-2" role="form" action="#" method="post">
+        <div class="row">
+          <div class="col-md-12">
+            <h1> <br></h1>
+          </div>
+        </div>
+        <div class="row">
+          
+<h2>Login Form </h2>
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+ 
+
+<% end %>
+  <%= render "devise/shared/links" %>
+
+
+ 
+             
+        </div>          
+          </form>                   
+    </div>
+  </div>
+
+</body></html>
+<style>
+.navbar-default {
+   background-color: transparent; 
+   border-color: transparent;
+}
+</style>

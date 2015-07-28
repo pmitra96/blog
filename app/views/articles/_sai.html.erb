@@ -1,0 +1,33 @@
+ <%@articles = Article.all%>
+<% @articles.each do |article| %>
+
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-preview">
+
+<h2 class="post-title">
+<%= link_to (article.Post), article_path(article) %>
+</h2>
+<p class="post-meta">Posted by <%= article.user.email if article.user%> on  <%= article.created_at.strftime("%b %d, %Y") %></p>
+<h3 class="post-subtitle">
+<%= article.Description %>
+</h3>
+</div>
+</div>
+</div>	
+
+<hr>
+<%end%>
+                
+                
+                
+                
+                
+               
+            
+
+
+ 
+      
+     
+         

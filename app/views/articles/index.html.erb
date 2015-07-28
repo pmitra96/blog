@@ -1,0 +1,173 @@
+
+    <div class="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                <%if user_signed_in?%>
+                      <li>
+                        <%= link_to'new article', new_article_path %>
+                    </li>
+                   
+                    <li>
+                       <%= link_to'my articles',  my_articles_articles_path %>
+                    </li>
+                    <li>
+                       <%= link_to'logout',  destroy_user_session_path, :method => :delete %>
+
+                    </li>
+                     <li>
+                       <%= link_to'newsfeed', newsfeed_articles_path %>
+                    </li>
+                    
+                     <li>
+                       <%= link_to'home',  articles_path %>
+                    </li>
+                    <%else%>
+                     <li>
+                        <%= link_to'log in', user_session_path %>
+                    </li>
+                   
+                    <li>
+                       <%= link_to'sign up',  new_user_registration_path %>
+                    </li>
+                     <li>
+                       <%= link_to'home',  articles_path %>
+                    </li>
+
+                    <%end%>
+</ul>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Home Page</h1>
+                        <hr class="small">
+                        <%if user_signed_in?%>
+                        
+                        <span class="subheading">hello <%= current_user.email %> :) </span>
+                        <%else%>
+                        <span class="subheading">Blog </span>
+                        <%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+
+
+<% @articles.each do |article| %>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-preview">
+
+<h1 style="text-decoration:none;
+           text-align:left;", class ="post-title">
+  <%= link_to (article.post.titleize), article_path(article)%>
+</h1>
+<h3 class="post-subtitle">
+<%= article.description %>
+</h3>
+                   
+<p class="post-meta">Posted by <span style="font-weight:bold;
+"><%=link_to (article.user.email),user_articles_articles_path(article.user_id) %></span> on  <%= article.created_at.strftime("%b %d, %Y") %></p>
+
+
+
+
+
+ <p> likes  <%= article.likers(User).count %>
+<%if user_signed_in?%>
+<%if current_user.likes?(article) %>
+ <%=link_to 'unlike', user_unlikes_articles_path(article), method: :get %>
+<%else%>
+ <%=link_to 'like', user_likes_articles_path(article), method: :get %>
+<%end%>
+<%end%>
+
+ </p>
+   
+      <%if user_signed_in? && current_user.id == article.user_id%>
+         <p><%= link_to 'Edit', edit_article_path(article) %>
+         <%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></p>
+         <%else%>
+     <%end%>
+
+     </hr>
+     </div>
+<hr>
+</div>
+</div>
+</div>
+    
+
+</div>
+<%end%>
+ <div class="container">
+
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+<%=paginate @articles %>
+</div>
+</div>
+</div>
+ <div class="container"> 
+
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<%=form_tag articles_path, :method => 'get' do%>
+  <p>
+    <%= text_field_tag :search,params[:search], placeholder: "Search posts"%>
+
+    <%= submit_tag "Search"%>
+
+  </p>
+<%end %>
+</div>
+</div>
+</div> 
+
+
+</div>
+ <style>
+ .atc{
+  text-decoration: none !important;
+ }
+ .as{
+  position: relative;
+  left:225px;
+ }
+ .aw{
+  position: relative;
+  left:;
+ }
+ 
+ </style>     
+      

@@ -1,0 +1,23 @@
+<%if comment.comment.present?%>
+
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.comment %> <br>
+  <span style="font-size:15px;
+  "> by <%=link_to (comment.user.email),user_articles_articles_path(comment.user_id) %> on <%= comment.created_at.strftime("%b %d, %Y") %></span>
+</p>
+
+
+<p>
+<%if user_signed_in? && current_user.id == comment.user_id%>
+
+  <%= link_to 'Delete Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+               <%else%>
+           
+             
+               <%end%>
+</p>
+<%end%>

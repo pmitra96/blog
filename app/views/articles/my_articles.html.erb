@@ -1,0 +1,75 @@
+<%= render 'articles/navmy'%>
+
+  <p> followers  <%= current_user.followers(User).count %> <br> 
+<% current_user.followers(User).each do |u|%>
+    <%=  link_to (u.email),user_articles_articles_path(u.id) %>
+     <br>
+
+<%end%>
+   </p>
+   <p>
+   following <%= current_user.followees(User).count %> <br>
+   <% current_user.followees(User).each do |u|%>
+     
+     <%=  link_to (u.email),user_articles_articles_path(u.id) %>
+     <br>
+
+<%end%>
+</p>
+<h1>My Articles</h1>
+
+
+
+
+ <%unless @article.blank?%>
+  <% @article.each do |article| %>
+    <div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-preview">
+
+<h2 style="text-decoration:none;
+           text-align:left;"class="post-title">
+<%= link_to (article.post), article_path(article) %>
+</h2>
+<h3 class="post-subtitle">
+<%= article.description %>
+</h3>
+                   
+<p class="post-meta">Posted by <%= article.user.email if article.user%> on  <%= article.created_at.strftime("%b %d, %Y") %></p>
+
+ <p> likes  <%= article.likers(User).count %>
+<%if user_signed_in?%>
+<%if current_user.likes?(article) %>
+ <%=link_to 'unlike', user_unlikes_articles_path(article), method: :get %>
+<%else%>
+ <%=link_to 'like', user_likes_articles_path(article), method: :get %>
+<%end%>
+<%end%>
+</p>
+
+<p>
+      
+         <%= link_to 'Edit', edit_article_path(article) %>
+         <%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></p>
+</div>
+</div>
+</div>
+
+
+
+ <%end%>
+ <%else%>
+ <p>No Articles were created,click on new article to create one</p>
+ <%end%>
+</div>
+ <style>
+        .intro-header{
+                background:url(/assets/about-bg.jpg) !important;
+
+        }
+        .container-fluid{
+             background:url(/assets/about-bg.jpg) !important;
+        }
+        </style>

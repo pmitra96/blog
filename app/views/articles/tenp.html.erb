@@ -1,0 +1,31 @@
+<ul>
+   <li>
+                        <%= link_to'new article', new_article_path %>
+                    </li>
+                   
+                    <li>
+                       <%= link_to'my articles',  my_articles_articles_path %>
+                    </li>
+                    <li>
+                       <%= link_to'logout',  destroy_user_session_path, :method => :delete %>
+
+                    </li>
+                     <li>
+                       <%= link_to'home',  articles_path %>
+                    </li>
+</ul>
+<%else%>
+<ul>
+                <li>
+                        <%= link_to'log in', user_session_path %>
+                    </li>
+                   
+                    <li>
+                       <%= link_to'sign up',  new_user_registration_path %>
+                    </li>
+                     <li>
+                       <%= link_to'home',  articles_path %>
+                    </li>
+</ul>
+<%end%>
+      </ul>
