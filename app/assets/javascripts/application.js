@@ -16,7 +16,6 @@
 //= require jwplayer.js
 //= require_tree .
 //= require bootstrap.js
-//= require bootstrap.min.js
 //= require clean-blog.js
-//= require clean-blog.min.js
 //= require script.js
+//*
